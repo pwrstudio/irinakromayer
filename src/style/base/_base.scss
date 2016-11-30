@@ -1,0 +1,73 @@
+* {
+  &::selection {
+    background: $main-color;
+    color: $background-color;
+  }
+}
+
+html {
+  @include hide-scroll();
+  overflow: none;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: $background-color;
+  line-height: 0;
+  @include screen-size('small') {}
+  overflow: none;
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  color: $main-color;
+  text-decoration: none;
+  &:visited {
+    color: $main-color;
+  }
+  &:hover {
+    color: $main-color;
+  }
+  &:active {
+    color: $main-color;
+  }
+}
+
+.main {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.logo {
+  width: 130px;
+  top: 60px;
+  left: 40px;
+  position: fixed;
+  z-index: 8;
+}
+
+.color-background {
+  position: fixed;
+  z-index: 4;
+}
+
+.image-background {
+  position: fixed;
+  object-fit: cover;
+  z-index: 4;
+}
+
+.video-background {
+  position: fixed;
+  z-index: 4;
+  object-fit: cover;
+  overflow: hidden;
+}
