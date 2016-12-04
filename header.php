@@ -20,15 +20,7 @@
 
 </head>
 
-<!--
-  // Replace these classes on the body-element
-  // to change the apperance of the logo >>>
-  // >>> logo-color
-  // >>> logo-video
-  // >>> logo-image
--->
 
-<?php // Get page by name ?>
 <?php $header = get_page_by_title( 'Header' );?>
 
 <style>
@@ -39,6 +31,10 @@
 
   .logo-link:hover ~ .color-background {
     background-color: <?php echo get_field("background_color_hover", $header->ID);?>;
+  }
+
+  .logo {
+    width:  <?php echo get_field("logo_width", $header->ID) . 'px';?>;
   }
 
 </style>
