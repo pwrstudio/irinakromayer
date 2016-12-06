@@ -14,7 +14,7 @@
   <?php get_template_part('template_parts/meta_info'); ?>
 
 
-  <title><?php wp_title(" | ", TRUE, "RIGHT"); ?></title>
+  <title>Irina Kromayer</title>
 
   <?php wp_head(); ?>
 
@@ -37,14 +37,27 @@
     width:  <?php echo get_field("logo_width", $header->ID) . 'px';?>;
   }
 
+  svg path {
+    fill: <?php echo get_field("border_color", $header->ID);?> !important;
+  }
+  svg:hover path {
+    fill: <?php echo get_field("border_color_hover", $header->ID);?> !important;
+  }
+
 </style>
 
 <body>
 
   <a href='mailto:<?php echo get_field("email_address", $header->ID);?>' class='logo-link'>
     <?php $logo = get_field('svg', $header->ID); ?>
-    <img src="<?php echo $logo['url'];?>" class='logo'>
+    <div class='logo'>
+      <?php $stripped = substr($logo['url'], 25); ?>
+      <?php echo file_get_contents($stripped); ?>
+    </div>
   </a>
+
+  <?php // var_dump( $logo );?>
+
 
   <?php $style = get_field("background_style", $header->ID);?>
   <?php if($style):?>

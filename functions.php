@@ -168,3 +168,7 @@ function my_custom_columns($column)
 }
 add_action("manage_posts_custom_column", "my_custom_columns");
 add_filter("manage_edit-post_columns", "my_page_columns");
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
