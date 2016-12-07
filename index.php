@@ -9,7 +9,7 @@
       <video src='<?php echo $image['url']; ?>' muted autoplay loop class="main <?php echo get_sub_field('size');?>"></video>
     <?php else:?>
       <?php $image = get_sub_field('image'); ?>
-      <img src="<?php echo $image['sizes']['pwr-large']; ?>" class="main <?php echo get_sub_field('size');?>">
+      <img src="<?php echo $image['url']; ?>" class="main <?php echo get_sub_field('size');?>">
     <?php endif;?>
   <?php endwhile; ?>
 <?php endif; ?>
