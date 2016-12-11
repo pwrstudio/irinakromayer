@@ -48,8 +48,12 @@ a {
 
 .logo {
   width: 130px;
-  top: 60px;
-  left: 40px;
+  top: 48px;
+  left: 28px;
+  @include screen-size('small') {
+    top: 34px;
+    left: 18px;
+  }
   position: fixed;
   z-index: 8;
   opacity: 0.97gu;
