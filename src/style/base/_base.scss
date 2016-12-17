@@ -46,8 +46,24 @@ a {
   object-fit: cover;
 }
 
-.logo {
-  width: 130px;
+.logo-link {
+  display: block;
+  top: 48px;
+  left: 28px;
+  @include screen-size('small') {
+    top: 34px;
+    left: 18px;
+  }
+  position: fixed;
+  z-index: 1000;
+  opacity: 0.97;
+  svg {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.logo-normal {
   top: 48px;
   left: 28px;
   @include screen-size('small') {
@@ -56,14 +72,37 @@ a {
   }
   position: fixed;
   z-index: 8;
-  opacity: 0.97gu;
+  opacity: 0.97;
   svg {
     width: 100%;
     height: auto;
-    path{
-      // fill: #fff;
-    }
   }
+  display: block;
+}
+
+.logo-hover {
+  top: 48px;
+  left: 28px;
+  @include screen-size('small') {
+    top: 34px;
+    left: 18px;
+  }
+  position: fixed;
+  z-index: 8;
+  opacity: 0.97;
+  svg {
+    width: 100%;
+    height: auto;
+  }
+  display:none;
+}
+
+.logo-link:hover ~ .logo-normal {
+  display: none
+}
+
+.logo-link:hover ~ .logo-hover {
+  display: block
 }
 
 .color-background {

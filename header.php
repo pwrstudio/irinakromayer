@@ -33,14 +33,19 @@
     background-color: <?php echo get_field("background_color_hover", $header->ID);?>;
   }
 
-  .logo {
+  .logo-normal {
     width:  <?php echo get_field("logo_width", $header->ID) . 'px';?>;
   }
 
-  svg path {
+  .logo-hover {
+    width:  <?php echo get_field("logo_width", $header->ID) . 'px';?>;
+  }
+
+  .logo-normal svg path {
     fill: <?php echo get_field("border_color", $header->ID);?> !important;
   }
-  svg:hover path {
+
+  .logo-hover svg path {
     fill: <?php echo get_field("border_color_hover", $header->ID);?> !important;
   }
 
@@ -49,12 +54,20 @@
 <body>
 
   <a href='mailto:<?php echo get_field("email_address", $header->ID);?>' class='logo-link'>
-    <?php $logo = get_field('svg', $header->ID); ?>
-    <div class='logo'>
-      <?php $stripped = substr($logo['url'], 25); ?>
-      <?php echo file_get_contents($stripped); ?>
-    </div>
+    <div class='logo'></div>
   </a>
+
+  <?php $logo = get_field('svg', $header->ID); ?>
+  <div class='logo-normal'>
+    <?php $stripped = substr($logo['url'], 25); ?>
+    <?php echo file_get_contents($stripped); ?>
+  </div>
+
+  <?php $logo_hover = get_field('svg_on_hover', $header->ID); ?>
+  <div class='logo-hover'>
+    <?php $stripped = substr($logo_hover['url'], 25); ?>
+    <?php echo file_get_contents($stripped); ?>
+  </div>
 
   <?php // var_dump( $logo );?>
 
