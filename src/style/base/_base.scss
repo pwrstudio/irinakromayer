@@ -47,6 +47,7 @@ a {
 }
 
 .logo-link {
+  cursor: pointer;
   display: block;
   top: 48px;
   left: 28px;
@@ -97,12 +98,22 @@ a {
   display:none;
 }
 
-.logo-link:hover ~ .logo-normal {
-  display: none
+.no-touch {
+  .logo-link:hover ~ .logo-normal {
+    display: none;
+  }
+  .logo-link:hover ~ .logo-hover {
+    display: block;
+  }
 }
 
-.logo-link:hover ~ .logo-hover {
-  display: block
+.touch {
+  .logo-link:active ~ .logo-normal {
+    display: none;
+  }
+  .logo-link:active ~ .logo-hover {
+    display: block;
+  }
 }
 
 .color-background {
